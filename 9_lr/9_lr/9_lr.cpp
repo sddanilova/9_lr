@@ -1,4 +1,4 @@
-// 9_lr.cpp: определяет точку входа для консольного приложения.
+// 9_lr.cpp: Г®ГЇГ°ГҐГ¤ГҐГ«ГїГҐГІ ГІГ®Г·ГЄГі ГўГµГ®Г¤Г  Г¤Г«Гї ГЄГ®Г­Г±Г®Г«ГјГ­Г®ГЈГ® ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГї.
 //
 
 #include "stdafx.h"
@@ -30,13 +30,13 @@ class ApplicationDevelopmentSetter {
 template <typename a, typename b>
 class ApplicationDevelopment : ApplicationDevelopmentGetter<a, b>, ApplicationDevelopmentSetter<a, b> {
 public:
-	ApplicationDevelopment(); // Конструктор по умолчанию
-	ApplicationDevelopment(const a * nameVal, const a * versionVal, b costVal, const a * platformVal, const a * languageVal); // Конструктор со всеми параметрами
-	ApplicationDevelopment<a, b>(const ApplicationDevelopment<a, b> &val); // Копирующий конструктор
-	~ApplicationDevelopment(); // Деструктор
-	ApplicationDevelopment operator +(ApplicationDevelopment<a, b> val); // Функциия суммы (перегрузка оператора +)
-	void operator =(ApplicationDevelopment<a, b> &val); // Функция присваивания (перегрузка оператора =)
-	void print(); // Функция вывода информации об объекте
+	ApplicationDevelopment(); // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	ApplicationDevelopment(const a * nameVal, const a * versionVal, b costVal, const a * platformVal, const a * languageVal); // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃРѕ РІСЃРµРјРё РїР°СЂР°РјРµС‚СЂР°РјРё
+	ApplicationDevelopment<a, b>(const ApplicationDevelopment<a, b> &val); // РљРѕРїРёСЂСѓСЋС‰РёР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	~ApplicationDevelopment(); // Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
+	ApplicationDevelopment operator +(ApplicationDevelopment<a, b> val); // Р¤СѓРЅРєС†РёРёСЏ СЃСѓРјРјС‹ (РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° +)
+	void operator =(ApplicationDevelopment<a, b> &val); // Р¤СѓРЅРєС†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ (РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° =)
+	void print(); // Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё РѕР± РѕР±СЉРµРєС‚Рµ
 	
 	void getname();
 	void getversion();
@@ -79,18 +79,18 @@ public:
 		delete[] filter;
 	}
 	void print() {
-		cout << "Название: " << name << endl;
-		cout << "Версия: " << version << endl;
-		cout << "Цена: " << cost << endl;
-		cout << "Поддерживается на платформах: " << platform << endl;
-		cout << "Поддерживаемые языки программирования: " << language << endl;
-		cout << "Фильтр: " << filter << endl;
+		cout << "РќР°Р·РІР°РЅРёРµ: " << name << endl;
+		cout << "Р’РµСЂСЃРёСЏ: " << version << endl;
+		cout << "Р¦РµРЅР°: " << cost << endl;
+		cout << "РџРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ РЅР° РїР»Р°С‚С„РѕСЂРјР°С…: " << platform << endl;
+		cout << "РџРѕРґРґРµСЂР¶РёРІР°РµРјС‹Рµ СЏР·С‹РєРё РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ: " << language << endl;
+		cout << "Р¤РёР»СЊС‚СЂ: " << filter << endl;
 	}
 private:
 	char * filter;
 };
 
-//конструктор по умолчанию
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 template <typename a, typename b>
 ApplicationDevelopment<a, b>::ApplicationDevelopment() {
 	cost = 0;
@@ -104,7 +104,7 @@ ApplicationDevelopment<a, b>::ApplicationDevelopment() {
 	strcpy_s(language, 7, "Noname");
 }
 
-//конструктор с параметрами
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 template <typename a, typename b>
 ApplicationDevelopment<a, b>::ApplicationDevelopment(const a * nameVal, const a * versionVal, b costVal, const a * platformVal, const a * languageVal) {
 	cost = costVal;
@@ -118,7 +118,7 @@ ApplicationDevelopment<a, b>::ApplicationDevelopment(const a * nameVal, const a 
 	strcpy_s(language, strlen(languageVal) + 1, languageVal);
 }
 
-//копирование
+//РєРѕРїРёСЂРѕРІР°РЅРёРµ
 template <typename a, typename b>
 ApplicationDevelopment<a, b>::ApplicationDevelopment(const ApplicationDevelopment<a, b> &val) {
 	cost = val.cost;
@@ -132,7 +132,7 @@ ApplicationDevelopment<a, b>::ApplicationDevelopment(const ApplicationDevelopmen
 	strcpy_s(language, strlen(val.language) + 1, val.language);
 }
 
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 template <typename a, typename b>
 ApplicationDevelopment<a, b>::~ApplicationDevelopment() {
 	delete[] name;
@@ -141,7 +141,7 @@ ApplicationDevelopment<a, b>::~ApplicationDevelopment() {
 	delete[] language;
 }
 
-//перегузка =
+//РїРµСЂРµРіСѓР·РєР° =
 template <typename a, typename b>
 void ApplicationDevelopment<a, b>::operator =(ApplicationDevelopment<a, b> &val) {
 	cost = val.cost;
@@ -155,7 +155,7 @@ void ApplicationDevelopment<a, b>::operator =(ApplicationDevelopment<a, b> &val)
 	strcpy_s(language, strlen(val.language) + 1, val.language);
 }
 
-//перегрузка +
+//РїРµСЂРµРіСЂСѓР·РєР° +
 template <typename a, typename b>
 ApplicationDevelopment<a, b> ApplicationDevelopment<a, b>::operator +(ApplicationDevelopment<a, b> val) {
 	ApplicationDevelopment created;
@@ -186,36 +186,36 @@ ApplicationDevelopment<a, b> ApplicationDevelopment<a, b>::operator +(Applicatio
 
 template <typename a, typename b>
 void ApplicationDevelopment<a, b>::print() {
-	cout << "Название: " << name << endl;
-	cout << "Версия: " << version << endl;
-	cout << "Цена: " << cost << endl;
-	cout << "Поддерживается на платформах: " << platform << endl;
-	cout << "Поддерживаемые языки программирования: " << language << endl;
+	cout << "РќР°Р·РІР°РЅРёРµ: " << name << endl;
+	cout << "Р’РµСЂСЃРёСЏ: " << version << endl;
+	cout << "Р¦РµРЅР°: " << cost << endl;
+	cout << "РџРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ РЅР° РїР»Р°С‚С„РѕСЂРјР°С…: " << platform << endl;
+	cout << "РџРѕРґРґРµСЂР¶РёРІР°РµРјС‹Рµ СЏР·С‹РєРё РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ: " << language << endl;
 }
 
 //get
 template <typename a, typename b>
 void ApplicationDevelopment<a, b>::getname() {
-	cout << "Название: " << name << endl;
+	cout << "РќР°Р·РІР°РЅРёРµ: " << name << endl;
 }
 template <typename a, typename b>
 void ApplicationDevelopment<a, b>::getversion() {
-	cout << "Версия: " << version << endl;
+	cout << "Р’РµСЂСЃРёСЏ: " << version << endl;
 }
 
 template <typename a, typename b>
 void ApplicationDevelopment<a, b>::getcost() {
-	cout << "Цена: " << cost << endl;
+	cout << "Р¦РµРЅР°: " << cost << endl;
 }
 
 template <typename a, typename b>
 void ApplicationDevelopment<a, b>::getplatform() {
-	cout << "Поддерживается на платформах: " << platform << endl;
+	cout << "РџРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ РЅР° РїР»Р°С‚С„РѕСЂРјР°С…: " << platform << endl;
 }
 
 template <typename a, typename b>
 void ApplicationDevelopment<a, b>::getlanguage() {
-	cout << "Поддерживаемые языки программирования: " << language << endl;
+	cout << "РџРѕРґРґРµСЂР¶РёРІР°РµРјС‹Рµ СЏР·С‹РєРё РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ: " << language << endl;
 }
 
 
@@ -268,4 +268,5 @@ int main()
 	system("pause");
 	return 0;
 }
+
 
